@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TinyLispCompiler.iml" filepath="$PROJECT_DIR$/TinyLispCompiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lisp.compiler.iml" filepath="$PROJECT_DIR$/lisp.compiler.iml" />
     </modules>
   </component>
 </project>
