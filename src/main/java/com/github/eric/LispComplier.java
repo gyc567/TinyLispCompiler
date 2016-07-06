@@ -3,7 +3,8 @@ package com.github.eric;
 /**
  * Created by eric567 on 3/8/2016.
  */
-public class Lisp {
+public class LispComplier {
+
     public int caculate(int i, int i1) {
         return i+i1;
     }
