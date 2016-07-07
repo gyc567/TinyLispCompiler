@@ -1,51 +1,27 @@
-package com.github.eric.camel
+package com.github.eric
 
-import com.github.eric.ValuePair
-import org.junit.After
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Test
+import spock.lang.Specification
 
 /**
- * Created by eric567 on 3/8/2016.
+ * Created by eric567 on 7/7/2016.
  */
-public class ValuePairTest {
+class ValuePairTest extends Specification {
+    def "First"() {
+        given:"valuePair instance with first =1,rest=2"
+        ValuePair valuePair=new ValuePair(1,2)
 
-    ValuePair valuePair = null;
+        when:"invoke the getFirst method"
+        String first=valuePair.getFirst()
+        int first_int=Integer.valueOf(first)
 
-    @Before
-    public void setUp() throws Exception {
+        then:"the reulst is 1"
+        first.equals("1")
+        first_int==1
 
 
     }
 
-    @After
-    public void tearDown() throws Exception {
+    def "Rest"() {
 
     }
-
-    @Test
-    public void test_first_value() {
-        valuePair = new ValuePair();
-        ValuePair vp2 = new ValuePair();
-        vp2.first = "1";
-        vp2.rest = "1";
-        valuePair.first = "+";
-        valuePair.rest = vp2;
-        Assert.assertEquals("+", valuePair.first);
-    }
-
-    @Test
-    public void test_rest_first_value() {
-        valuePair = new ValuePair();
-        ValuePair vp2 = new ValuePair();
-        vp2.first = "1";
-        vp2.rest = "2";
-        valuePair.first = "+";
-        valuePair.rest = vp2;
-        ValuePair vpr = (ValuePair) valuePair.rest;
-        Assert.assertEquals("1", vpr.first.toString());
-        Assert.assertEquals("2", vpr.rest.toString());
-    }
-
 }
