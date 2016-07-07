@@ -35,7 +35,7 @@ class ValuePairTest extends Specification {
     }
 
 
-    def "rest if 2 the rest method shall return 2"() {
+    def "rest is 2 the rest method shall return 2"() {
         given: "valuepair instance with first =1,rest=2"
         ValuePair valuepair = new ValuePair(1, 2)
 
@@ -46,6 +46,21 @@ class ValuePairTest extends Specification {
         then: "expect the reulst is 2"
         rest.equals("2")
         rest_int == 2
+
+    }
+    def "valuepair1 is +  the rest is valuepair2 with 1,2  the rest method shall return valuepair with 1,2 "() {
+        given: "valuepair1 is +,valuepair2,valuepair2 instance with first =1,rest=2"
+        ValuePair valuepair2 = new ValuePair(1, 2)
+        ValuePair valuepair1 = new ValuePair("+", valuepair2)
+
+        when: "get the rest object value"
+        ValuePair rest = valuepair1.getRest()
+
+
+        then: "expect the reulst is 2"
+        rest!=null
+        rest.getFirst()==1
+        rest.getRest()==2
 
     }
 }
