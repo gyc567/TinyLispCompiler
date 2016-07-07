@@ -20,15 +20,28 @@ class ValuePairTest extends Specification {
 
 
     }
+    def "first is +  the first method shall return +"() {
+        given: "valuePair instance with first =1,rest=2"
+        ValuePair valuePair = new ValuePair("+", 2)
+
+        when: "invoke the getFirst method"
+        String first = valuePair.getFirst()
+
+        then: "the reulst is +"
+        first.equals("+")
 
 
-    def "Rest"() {
+
+    }
+
+
+    def "rest if 2 the rest method shall return 2"() {
         given: "valuepair instance with first =1,rest=2"
-        valuepair valuepair = new valuepair(1, 2)
+        ValuePair valuepair = new ValuePair(1, 2)
 
         when: "get the rest object value"
-        string rest = valuepair.getrest()
-        int rest_int = integer.valueof(rest)
+        String rest = valuepair.getRest()
+        int rest_int = Integer.valueOf(rest)
 
         then: "expect the reulst is 2"
         rest.equals("2")
