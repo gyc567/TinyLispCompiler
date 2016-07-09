@@ -63,4 +63,24 @@ class ValuePairTest extends Specification {
         rest.getRest()==2
 
     }
+    def "valuepair1 is +  the rest is valuepair2 with 1,2 ,3 the rest method shall return valuepair with 1,2,3 "() {
+        given: "valuepair1 is +,valuepair2,valuepair2 instance with first =1,rest=2"
+        ValuePair valuepair3 = new ValuePair(2, 3)
+        ValuePair valuepair2 = new ValuePair(1, valuepair3)
+        ValuePair valuepair1 = new ValuePair("+", valuepair2)
+
+        when: "get the rest object value"
+        ValuePair rest = valuepair1.first
+        int rest_first=rest.getFirst()
+        ValuePair vp3=rest.getRest()
+
+
+        then: "expect the reulst is 2"
+        rest!=null
+        vp3!=null
+        rest_first==1
+        vp3.getFirst()==2
+        vp3.getRest()==3
+
+    }
 }
