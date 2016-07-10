@@ -5,24 +5,20 @@ package com.github.eric;
  */
 public class LispComplier {
 
-    public int caculate(int i, int i1) {
+    public static int caculate(int i, int i1) {
         return i+i1;
     }
 
-    public ValuePair wraper(String s) {
-        ValuePair valuePair=new ValuePair();
-        valuePair.first="+";
-        return valuePair;
-    }
 
-    public Object eval(ValuePair valuePair)
+
+    public static  Object eval(ValuePair valuePair)
     {
         String fn= (String) valuePair.first;
         if(fn!=null&&fn.equals("+"))
         {
             ValuePair args= (ValuePair) valuePair.rest;
-            int arg1= Integer.valueOf((String) args.first);
-            int arg2= Integer.valueOf((String) args.rest);
+            Integer arg1= (Integer) args.first;
+            Integer arg2= (Integer) args.rest;
             Integer rt=caculate(arg1,arg2);
             return rt;
         }
