@@ -28,4 +28,15 @@ class ValuePairUtilsTest extends Specification {
         then:"return value is 2"
         ft==2
     }
+    def "valuepair1 with 1,2 ,valuepair2 with 1,valuepari1,rest method shall return valuepair1"() {
+
+        given:"valuepair instance with 1,2"
+        ValuePair vp1=new ValuePair(1,2)
+        ValuePair vp2=new ValuePair(1,vp1)
+        when:"call first method of ValuepairUtils"
+        Object fst=ValuePairUtils.rest(vp2)
+
+        then:"return value is 2"
+        fst!=null
+    }
 }
