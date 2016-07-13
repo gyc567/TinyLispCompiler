@@ -32,8 +32,8 @@ public class LispComplier {
             rt= calculate(rt,args);
 
 
-            return rt;
+
         }
-        return null;
+        return rt;
     }
 }
