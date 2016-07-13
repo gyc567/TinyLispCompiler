@@ -8,10 +8,10 @@ import spock.lang.Specification
 class LispComplierTest extends Specification {
     def "Caculate"() {
         given:"args is 1,2"
-        int arg1=1
-        int arg2=2
-        when: "call caculate method"
-        int rt=LispComplier.caculate(arg1,arg2)
+        ValuePair vp1=new ValuePair(1,2)
+        when: "call calculate method"
+
+        int rt=LispComplier.calculate(0,vp1)
         then:"the result shall equal 3"
         rt==3
 
