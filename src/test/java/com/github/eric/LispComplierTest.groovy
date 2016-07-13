@@ -6,7 +6,7 @@ import spock.lang.Specification
  * Created by eric567 on 7/11/2016.
  */
 class LispComplierTest extends Specification {
-    def "Caculate"() {
+    def "Caculate for valuepair with 1,2"() {
         given:"args is 1,2"
         ValuePair vp1=new ValuePair(1,2)
         when: "call calculate method"
@@ -14,6 +14,19 @@ class LispComplierTest extends Specification {
         int rt=LispComplier.calculate(0,vp1)
         then:"the result shall equal 3"
         rt==3
+
+
+    }
+    def "Caculate for valuepair with 1,2,3"() {
+        given:"args is 1,and 2,3"
+
+        ValuePair vp0=new ValuePair(2,3)
+        ValuePair vp1=new ValuePair(1,vp0)
+        when: "call calculate method"
+
+        int rt=LispComplier.calculate(0,vp1)
+        then:"the result shall equal 6"
+        rt==6
 
 
     }
