@@ -49,6 +49,12 @@ public class LispComplier {
             rt = plus(rt, args);
 
 
+        }else if (fn != null && fn.equals("-")) {
+            ValuePair args = (ValuePair) valuePair.rest;
+
+            rt = subtract(rt, args);
+
+
         }
         return rt;
     }

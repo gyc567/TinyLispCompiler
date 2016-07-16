@@ -85,4 +85,18 @@ class LispComplierTest extends Specification {
         rt_int == 6
 
     }
+
+    def "Eval -for  #vp1,#rtValue"() {
+
+        expect:
+        rtValue == LispComplier.eval(vp1)
+        where:
+        vp1                                                                         | rtValue
+        new ValuePair("-", new ValuePair(3, 0))                                     | 3
+        new ValuePair("-", new ValuePair(3, 2))                                     | 1
+        new ValuePair("-", new ValuePair(8, new ValuePair(2, 3)))                   | 3
+
+        new ValuePair("-", new ValuePair(9, new ValuePair(2, new ValuePair(2, 3)))) | 2
+
+    }
 }
