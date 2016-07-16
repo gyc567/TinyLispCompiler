@@ -9,15 +9,15 @@ public class LispComplier {
         if (args == null) {
             return result;
         }
+        if (args instanceof Integer) {
+            result += (Integer) args;
+            return result;
+        }
         if (args instanceof ValuePair) {
             Object first = ValuePairUtils.first(args);
-            if (first instanceof Integer)
+            if (first instanceof Integer) {
                 result += ((Integer) first).intValue();
-
-        }else if(args instanceof  Integer)
-        {
-            result+=(Integer) args;
-            return result;
+            }
         }
         return calculate(result, ValuePairUtils.rest(args));
     }
@@ -25,12 +25,11 @@ public class LispComplier {
 
     public static Object eval(ValuePair valuePair) {
         String fn = (String) valuePair.first;
-        Integer rt=0;
+        Integer rt = 0;
         if (fn != null && fn.equals("+")) {
             ValuePair args = (ValuePair) valuePair.rest;
 
-            rt= calculate(rt,args);
-
+            rt = calculate(rt, args);
 
 
         }
