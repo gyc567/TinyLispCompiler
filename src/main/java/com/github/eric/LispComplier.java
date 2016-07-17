@@ -41,11 +41,22 @@ public class LispComplier {
 
 
     public static Object eval(ValuePair valuePair) {
-        String fn = (String) valuePair.first;
+        String fn = (String) ValuePairUtils.first(valuePair);
         Integer rt = 0;
         if (fn != null && fn.equals("+")) {
             ValuePair args = (ValuePair) valuePair.rest;
+            Object rest1 = ValuePairUtils.rest(args);
+            if(rest1 instanceof ValuePair) {
+                ValuePair rest = (ValuePair)rest1;
+                Object rest_first = ValuePairUtils.first(rest);
+                Object first2 = ValuePairUtils.rest(rest);
+                if(rest_first !=null&& rest_first instanceof String&&((String) rest_first).equalsIgnoreCase("-"))
+                {
 
+                    rt = subtract(rt, first2);
+
+                }
+            }
             rt = plus(rt, args);
 
 
