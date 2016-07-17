@@ -107,7 +107,7 @@ class LispComplierTest extends Specification {
         where:
         vp1                                                                           | rtValue
         new ValuePair("-", new ValuePair(9, new ValuePair("+", new ValuePair(1, 2)))) | 6
-        new ValuePair("+", new ValuePair(9, new ValuePair("-", new ValuePair(4, 2)))) | 11
+
         new ValuePair("-", new ValuePair(3, 2))                                       | 1
         new ValuePair("-", new ValuePair(8, new ValuePair(2, 3)))                     | 3
 
