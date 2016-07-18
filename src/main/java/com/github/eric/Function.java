@@ -10,6 +10,14 @@ public class Function {
     private List args;
     private int reslut;
 
+    public List getArgs() {
+        return args;
+    }
+
+    public void setArgs(List args) {
+        this.args = args;
+    }
+
     public Operator getOperator() {
         return operator;
     }
@@ -33,16 +41,34 @@ public class Function {
     if(valuePair.first==null)
         return null;
 
-        Object first = valuePair.first;
+        Object first = ValuePairUtils.first(valuePair);
+        Object rest = ValuePairUtils.rest(valuePair);
+        Function function=new Function();
         if(first instanceof String)
         {
             if(((String) first).equalsIgnoreCase("+"))
             {
-                Function function=new Function();
+
                 function.setOperator(Operator.PLUS);
             }
+        }else if(rest instanceof ValuePair)
+        {
+            ValuePair vp= (ValuePair) rest;
+            function=travleValuePair(function,vp);
         }
-        return null;
+        return function;
+    }
+
+    private Function travleValuePair(Function function, ValuePair vp) {
+        if (vp==null||vp.first==null)
+            return function;
+
+        Object first = vp.first;
+        function.getArgs().add(first);
+        if(vp.rest
+                !=null)
+            function.getArgs().add(vp.rest);
+        return function;
     }
 
 }
