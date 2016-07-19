@@ -1,5 +1,6 @@
 package com.github.eric;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  */
 public class Function {
     private Operator operator;
-    private List args;
+    private List args=new ArrayList();
     private int reslut;
 
     public List getArgs() {
@@ -51,7 +52,8 @@ public class Function {
 
                 function.setOperator(Operator.PLUS);
             }
-        }else if(rest instanceof ValuePair)
+        }
+        if(rest instanceof ValuePair)
         {
             ValuePair vp= (ValuePair) rest;
             function=travleValuePair(function,vp);
