@@ -10,7 +10,7 @@ class FunctionTest extends Specification {
         given: "vp instance with (+ 1 2 )"
         ValuePair vp = new ValuePair("+", new ValuePair(1, 2))
         when:"call tranform method of Function"
-        Function function=new Function().transform(vp)
+        Function function=FunctionUtils.transform(vp)
         then:"function 's operator is + ,args is 1 2 "
         function.getOperator().equals(Operator.PLUS)
         function.getArgs().size()==2
@@ -22,8 +22,8 @@ class FunctionTest extends Specification {
         given: "vp instance with (+ 1 2 )"
         ValuePair vp = new ValuePair("+", new ValuePair(1, 2))
         when:"call eval method of Function"
-        Function function=new Function().transform(vp)
-        Function function2=new Function().eval(function)
+        Function function=FunctionUtils.transform(vp)
+        Function function2=FunctionUtils.eval(function)
         then:"function 's operator is + ,args is 1 2 "
         function.getOperator().equals(Operator.PLUS)
         function.getArgs().size()==2
@@ -35,8 +35,8 @@ class FunctionTest extends Specification {
         given: "vp instance with (- 5 2 )"
         ValuePair vp = new ValuePair("-", new ValuePair(5, 2))
         when:"call eval method of Function"
-        Function function=new Function().transform(vp)
-        Function function2=new Function().eval(function)
+        Function function=FunctionUtils.transform(vp)
+        Function function2=FunctionUtils.eval(function)
         then:"function 's operator is - ,args is 5 2 "
         function.getOperator().equals(Operator.SUBTRACT)
         function.getArgs().size()==2
