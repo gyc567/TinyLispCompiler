@@ -47,6 +47,9 @@ public class Function {
             if (((String) first).equalsIgnoreCase("+")) {
 
                 function.setOperator(Operator.PLUS);
+            }else if (((String) first).equalsIgnoreCase("-"))
+            {
+                function.setOperator(Operator.SUBTRACT);
             }
         }
         if (rest instanceof ValuePair) {
@@ -70,13 +73,24 @@ public class Function {
 
     public Function eval(Function function) {
         int rt = 0;
+        List<Integer> args = function.getArgs();
         if (function.getOperator().equals(Operator.PLUS)) {
-            List<Integer> args = function.getArgs();
+
 
             for (Integer arg : args) {
                 rt += arg;
             }
 
+        }else if(function.getOperator().equals(Operator.SUBTRACT))
+        {
+            Integer sum = args.get(0);
+            int n=0;
+            for(int i=1;i<args.size();i++)
+            {
+                Integer integer = args.get(i);
+                n+=integer;
+            }
+            rt=sum-n;
         }
         function.setReslut(rt);
         return function;
