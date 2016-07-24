@@ -20,6 +20,7 @@ public class FunctionUtils {
         }
         if (rest instanceof ValuePair) {
             ValuePair vp = (ValuePair) rest;
+
             function = travleValuePair(function, vp);
         }
         return function;

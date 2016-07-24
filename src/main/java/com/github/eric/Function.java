@@ -10,6 +10,15 @@ public class Function {
     private Operator operator;
     private List args = new ArrayList();
     private int reslut;
+    private Function nextFunction;
+
+    public Function getNextFunction() {
+        return nextFunction;
+    }
+
+    public void setNextFunction(Function nextFunction) {
+        this.nextFunction = nextFunction;
+    }
 
     public List getArgs() {
         return args;
