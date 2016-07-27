@@ -69,4 +69,12 @@ public class LispComplier {
         }
         return rt;
     }
+
+
+    public static  Object evals(ValuePair valuePair)
+    {
+        Env env=new Env();
+
+        return null;
+    }
 }

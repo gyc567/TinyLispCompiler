@@ -33,6 +33,7 @@ public class FunctionUtils {
         Object first = vp.first;
         function.getArgs().add(first);
         if (vp.rest
+                
                 != null)
             function.getArgs().add(vp.rest);
         return function;
