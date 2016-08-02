@@ -31,7 +31,7 @@ class FunctionTest extends Specification {
         function.getArgs().get(1)==2
         function2.getReslut()==3
     }
-    def "eval  #function -"() {
+    def "eval  #function -,(- 5 2 )"() {
         given: "vp instance with (- 5 2 )"
         ValuePair vp = new ValuePair("-", new ValuePair(5, 2))
         when:"call eval method of Function"
