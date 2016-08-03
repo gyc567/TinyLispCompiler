@@ -11,7 +11,7 @@ class LispComplierTest extends Specification {
         ValuePair vp1 = new ValuePair(1, 2)
         when: "call plus method"
 
-        int rt = LispComplier.plus(0, vp1)
+        int rt = Function.plus(0, vp1)
         then: "the result shall equal 3"
         rt == 3
 
@@ -21,7 +21,7 @@ class LispComplierTest extends Specification {
     def "subtract for #vp1,#rtValue"() {
 
         expect:
-        rtValue == LispComplier.subtract(0, vp1)
+        rtValue == Function.subtract(0, vp1)
         where:
         vp1                                                     | rtValue
         new ValuePair(3, 2)                                     | 1
@@ -42,7 +42,7 @@ class LispComplierTest extends Specification {
 
         when: "call plus method"
 
-        int rt = LispComplier.plus(0, vp1)
+        int rt = Function.plus(0, vp1)
 
         then: "the result shall equal 6"
         rt == 6

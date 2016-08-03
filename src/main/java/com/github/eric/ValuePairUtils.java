@@ -14,4 +14,9 @@ public class ValuePairUtils {
     public static Object rest(Object x) {
         return (x instanceof ValuePair) ? ((ValuePair) x).rest : null;
     }
+
+
+    public static ValuePair cons(Object a, Object b) {
+        return new ValuePair(a, b);
+    }
 }
