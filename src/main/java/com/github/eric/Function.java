@@ -112,7 +112,7 @@ public class Function {
                 function.setOperator(Operator.SUBTRACT);
                 return function;
             }
-        }
+    }
 
         return new Function();
     }

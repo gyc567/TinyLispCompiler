@@ -13,6 +13,7 @@ public class LispComplier {
         if (!(valuePair instanceof ValuePair)) {
             return valuePair;
         }
+
         Object first = ValuePairUtils.first(valuePair);
         Object rest = ValuePairUtils.rest(valuePair);
 

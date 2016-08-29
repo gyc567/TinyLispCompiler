@@ -70,7 +70,7 @@ class ValuePairTest extends Specification {
         ValuePair valuepair1 = new ValuePair("+", valuepair2)
 
         when: "get the rest object value"
-        ValuePair rest = valuepair1.first
+        ValuePair rest = valuepair1.rest
         int rest_first=rest.getFirst()
         ValuePair vp3=rest.getRest()
 
