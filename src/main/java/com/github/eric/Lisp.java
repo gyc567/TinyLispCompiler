@@ -552,6 +552,7 @@ public class Lisp {
                 System.out.print("\n> ");
             }
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

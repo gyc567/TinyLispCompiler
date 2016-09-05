@@ -9,6 +9,7 @@ build/
 target/
 
 # IDEA
+.idea/*
 .idea/libraries
 .idea/scopes
 .idea/.name
