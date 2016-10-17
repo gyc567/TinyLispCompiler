@@ -69,7 +69,7 @@ class LispComplierTest extends Specification {
         Object rt = LispComplier.eval(vp2)
         int rt_int = Integer.valueOf(rt)
         then: "the result shall be 3"
-        rt_int == 10
+        rt_int == 1
 
     }
 
